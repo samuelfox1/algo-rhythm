@@ -9,3 +9,6 @@ var vowelCount = function (str) {
     }
     if (str === '') { return y }
 };
+
+
+// checkout includes method

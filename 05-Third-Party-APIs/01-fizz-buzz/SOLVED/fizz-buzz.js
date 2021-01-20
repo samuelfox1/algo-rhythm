@@ -6,15 +6,9 @@
 
 var fizzBuzz = function (arr) {
     arr.forEach(x => {
-        if (x % 15 === 0) {
-            x = 'Fizz Buzz'
-        }
-        if (x % 5 === 0) {
-            x = 'Buzz'
-        }
-        if (x % 3 === 0) {
-            x = 'Fizz'
-        }
+        if (x % 15 === 0) { x = 'Fizz Buzz' }
+        if (x % 5 === 0) { x = 'Buzz' }
+        if (x % 3 === 0) { x = 'Fizz' }
         console.log(x)
     });
 };

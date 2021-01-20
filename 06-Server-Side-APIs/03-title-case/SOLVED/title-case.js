@@ -10,3 +10,6 @@ var titleCase = function (str) {
     });
     return sentence.join(' ')
 };
+
+
+//checkout substring function
