@@ -4,27 +4,39 @@
 
 
 var lookAndSay = function (n) {
-    let chars = (n + ' ').split('')
-    let lastChar = chars[0]
-    let index = ''
-    let count = 0
+    // add a space to the end of 'n', this will convert n to a string with a space on the end of it. Then split the string up, this will result in an array of all numbers, plus a blank space as the last index.
+    const numArr = (n + ' ').split('')
 
-    chars.forEach(nextChar => {
-        if (nextChar === lastChar) {
-            count++
+    // declare 'currentNum' as the first index. 'currentNum' will be used in a loop to compare to the following index, to count how many of the same number occur in a row.
+    var currentNum = numArr[0]
+
+    // start a counter at 0
+    var counter = 0
+
+    // declare newNum as the container to save our new lookAndSay number as it is built.
+    var newNum = ''
+
+    // for each index of 'numArr', compare the index to the currentNum.
+    // if the index matches, increment the counter for the loop.
+    // if the index does not match, concatenate the 'counter' and 'currentNum' onto 'newNum', reset the counter to 1.
+    numArr.forEach(index => {
+        if (index === currentNum) {
+            counter++
         } else {
-            index += (count + '') + lastChar;
-            lastChar = nextChar;
-            count = 1
+            newNum += counter + currentNum;
+            currentNum = index;
+            counter = 1
         }
     });
-
-    return parseInt(index)
+    console.log(newNum)
+    return parseInt(newNum)
 
 };
 
-//    when given '11  4  333  8   77'
+//    when given ' 11  4  333  8   77'
 // should return '21  14 33   18  27' 
+
+
 // should return '10' when given '0'
 
 //    when given '  9    11      222     7      3'
