@@ -1,3 +1,5 @@
+
+
 // Denis Molloy solution
 const validAnagram = (str1, str2) => {
     // check to see if length is the same
@@ -28,6 +30,8 @@ const validAnagram = (str1, str2) => {
     return true;
 };
 
+
+
 const wordMap = str => {
     const charMap = {};
     for (let char of str.toLowerCase()) {
@@ -35,6 +39,8 @@ const wordMap = str => {
     }
     return charMap;
 };
+
+
 
 validAnagram("", ""); // true
 validAnagram("aaz", "zza"); // false
