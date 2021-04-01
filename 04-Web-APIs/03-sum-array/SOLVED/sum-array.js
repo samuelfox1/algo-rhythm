@@ -14,13 +14,9 @@
 // what the reduce() method actually does
 var sumArray = (arr) => {
     // start at 0
-    let a = 0
+    let sumOfArr = 0
 
-    for (; 0 < arr.length;) {
-        // a = a + arr[0]
-        a += arr[0]
-        // removes index[0], so index[1] now becomes index[0] for the next round
-        arr.shift()
-    }
-    return a
+    arr.forEach(num => { sumOfArr += num }) // add each value to sumofArr
+
+    return sumOfArr
 }

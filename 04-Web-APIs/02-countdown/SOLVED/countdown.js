@@ -2,8 +2,13 @@
 // You may assume `num` will be a positive number
 
 var countdown = function (num) {
-    for (let i = num; i >= 1; i--) { console.log(i) }
+    // for (let i = num; i >= 1; i--) { console.log(i) }
+
+    // - or -
+    while (num > 0) {
+        console.log(num)
+        num--
+    }
 };
 
 
-//could also use a while loop

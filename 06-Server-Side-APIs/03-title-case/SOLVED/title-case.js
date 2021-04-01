@@ -1,14 +1,14 @@
-// Write code to create a function takes a string and returns a new string with the first letters of each word capitalized
+// Write code to create a function that takes a string and returns a new string with the first letters of each word capitalized
 
 var titleCase = function (str) {
-    let sentence = []
-    let x = str.split(' ').forEach(word => {
-        let letters = word.split('')
-        letters[0] = letters[0].toUpperCase()
-        word = letters.join('')
-        sentence.push(word)
+    let sentence = [] // container for output sentence
+    str.split(' ').forEach(word => { // split input sentence into array of words
+        let letters = word.split('') // split word into array of letters
+        letters[0] = letters[0].toUpperCase() // set first letter to uppercase
+        word = letters.join('') // lin letters back into word
+        sentence.push(word) // add word to output sentence
     });
-    return sentence.join(' ')
+    return sentence.join(' ') // return joined array back into string, adding a space between each word
 };
 
 

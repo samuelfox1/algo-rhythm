@@ -10,7 +10,7 @@ describe("isPalindrome", function () {
   });
 
   it("takes a string and returns false if the string is not a palindrome", function () {
-    var str = "racecar";
+    var str = "radars";
 
     var result = isPalindrome(str);
 
