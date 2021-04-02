@@ -9,6 +9,8 @@ Example:
 
 */
 
+
+
 let mystring1 = "acabbca"
 let mystring2 = "asdkfjnasdkljvnasldj"
 let mystring3 = "abcdefghijklmnopqrstuvwxyz"
