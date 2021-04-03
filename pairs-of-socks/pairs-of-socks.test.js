@@ -1,4 +1,4 @@
-const { test, expect, toBe, it } = require('@jest/globals')
+const { describe, expect, toBe, it } = require('@jest/globals')
 const pairsOfSocks = require('./pairs-of-socks')
 
 describe('pairsOfSocks', () => {

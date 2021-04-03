@@ -1,14 +1,3 @@
-/*
-    WHEN given a string
-    RETURN the length of the longest uniqe substring
-
-Example: 
-    given: "abcabbca"
-    return: 3
-    reason: "abc","bca","cab", are the longest unique options, none are longer then 3
-
-*/
-
 let mystring1 = "acabbca"
 let mystring2 = "asdkfjnasdkljvnasldj"
 let mystring3 = "abcdefghijklmnopqrstuvwxyz"
@@ -31,6 +20,4 @@ function longestSubstring(string) {
     return longest
 }
 
-longestSubstring(mystring1)
-longestSubstring(mystring2)
-longestSubstring(mystring3)
+module.exports = longestSubstring
