@@ -23,5 +23,4 @@ describe("longestSubtring", () => {
 
     expect(result).toBe(26);
   });
-
 });
