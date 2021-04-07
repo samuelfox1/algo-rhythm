@@ -1,13 +1,4 @@
 
-// const n = 9
-// const arr = [10, 20, 20, 10, 10, 30, 50, 10, 20]
-
-// const n = 15
-// const arr = [6, 5, 2, 3, 5, 2, 2, 1, 1, 5, 1, 3, 3, 3, 5]
-
-// const n = 20
-// const arr = [4, 5, 5, 5, 6, 6, 4, 1, 4, 4, 3, 6, 6, 3, 6, 1, 4, 5, 5, 5]
-
 function pairsOfSocks(arr) {
     if (typeof arr === 'string' ||
         typeof arr === 'number' ||

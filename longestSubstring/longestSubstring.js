@@ -12,7 +12,7 @@ function longestSubstring(string) {
             substring += string[i] // add character to substring
             if (substring.length > longest) { // if substring length is greater
                 longest = substring.length // update variable
-                console.log(substring, longest) // just to see the process in the console
+                // console.log(substring, longest) // just to see the process in the console
             }
         } else { substring = string[i] } // if character is found in substring, reset substring to the character to start the next attempt
     }
