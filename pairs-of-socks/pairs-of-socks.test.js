@@ -1,5 +1,5 @@
 const { describe, expect, toBe, it } = require('@jest/globals')
-const pairsOfSocks = require('./pairsOfSocks')
+const pairsOfSocks = require('./pairs-of-socks')
 
 describe('pairsOfSocks', () => {
     it("should return 3 when given the array [10, 20, 20, 10, 10, 30, 50, 10, 20]", () => {

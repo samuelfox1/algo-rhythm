@@ -1,5 +1,5 @@
 const { describe, expect, toBe, it } = require('@jest/globals')
-const longestSubstring = require('./longestSubstring')
+const longestSubstring = require('./longest-substring')
 
 describe("longestSubtring", () => {
   it(`should return 3 when given the string "acabbca"`, () => {

@@ -12,3 +12,5 @@ var vowelCount = function (str) {
     }
 };
 // checkout includes method
+
+module.exports = vowelCount

@@ -13,3 +13,5 @@ var titleCase = function (str) {
 
 
 //checkout substring function
+
+module.exports = titleCase

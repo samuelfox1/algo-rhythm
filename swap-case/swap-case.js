@@ -10,3 +10,5 @@ var swapCase = function (str) {
     }
     return z.join('')
 };
+
+module.exports = swapCase

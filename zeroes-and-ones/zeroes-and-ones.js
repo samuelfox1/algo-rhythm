@@ -12,3 +12,5 @@ var zeroesAndOnes = function (str) {
     })
     return ones === zeros
 };
+
+module.exports = zeroesAndOnes
