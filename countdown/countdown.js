@@ -11,4 +11,4 @@ var countdown = function (num) {
     }
 };
 
-
+module.exports = countdown

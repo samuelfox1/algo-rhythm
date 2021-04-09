@@ -1,12 +1,13 @@
-var expect = chai.expect;
+const { describe, it, expect } = require('@jest/globals')
+const characterCount = require('./character-count')
 
-describe("characterCount", function() {
-  it("should return an object containing the counts for each letter in a given string", function() {
-    var str = "she sells sea shells by the sea shore";
+describe("characterCount", function () {
+  it("should return an object containing the counts for each letter in a given string", function () {
+    let str = "she sells sea shells by the sea shore";
 
-    var result = characterCount(str);
+    let result = characterCount(str);
 
-    expect(result).to.eql({
+    expect(result).toEqual({
       s: 8,
       h: 4,
       e: 7,
@@ -24,7 +25,7 @@ describe("characterCount", function() {
 
     result = characterCount(str);
 
-    expect(result).to.eql({
+    expect(result).toEqual({
       p: 9,
       e: 7,
       t: 1,

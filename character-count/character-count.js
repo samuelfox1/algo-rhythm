@@ -22,3 +22,5 @@ var characterCount = function (str) {
 
     return obj
 };
+
+module.exports = characterCount

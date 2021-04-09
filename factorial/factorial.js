@@ -6,3 +6,5 @@ var factorial = function (num) {
     for (let i = 1; i <= num; i++)  x = x * i // start at 1 and work up to num, multiplying new product each time.
     return (x)
 };
+
+module.exports = factorial
