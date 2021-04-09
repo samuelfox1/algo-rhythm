@@ -5,3 +5,5 @@ var isPalindrome = function (str) {
     let y = x.split('').reverse().join('') // reverse the letters
     return x === y // returns true or false 
 };
+
+module.exports = isPalindrome

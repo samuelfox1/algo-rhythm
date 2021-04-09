@@ -12,3 +12,4 @@ var isUnique = function (arr) {
     }
     return true
 };
+module.exports = isUnique

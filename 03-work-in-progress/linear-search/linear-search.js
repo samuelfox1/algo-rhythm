@@ -29,3 +29,5 @@ var linearSearch = function (arr, target) {
 //     if (found) { return x }
 //     return -1
 // };
+
+module.exports = linearSearch

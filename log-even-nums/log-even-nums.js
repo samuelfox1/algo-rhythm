@@ -7,5 +7,4 @@ var logEvenNums = function (num) {
     }
 };
 
-
-
+module.exports = logEvenNums
