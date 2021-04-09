@@ -15,3 +15,5 @@ var multiplyInto20 = function (arr) {
     })
     return status
 };
+
+module.exports = multiplyInto20

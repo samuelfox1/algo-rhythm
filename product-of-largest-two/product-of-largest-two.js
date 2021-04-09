@@ -8,3 +8,5 @@ var productOfLargestTwo = function (arr) {
     })
     return arr[arr.length - 1] * arr[arr.length - 2]
 };
+
+module.exports = productOfLargestTwo

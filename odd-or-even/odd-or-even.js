@@ -8,3 +8,5 @@ var oddOrEven = function (num) {
         return 'odd'
     }
 };
+
+module.exports = oddOrEven
