@@ -19,3 +19,5 @@ var camelCase = function (str) {
     console.log(y)
     return y
 };
+
+module.exports = camelCase

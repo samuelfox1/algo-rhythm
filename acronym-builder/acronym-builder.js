@@ -23,7 +23,6 @@ var acronymBuilder = function (str) {
         return accumulator + str.charAt(0).toUpperCase()
 
     }, '')
-    console.log(temp)
     return temp
 };
 
@@ -46,3 +45,5 @@ var acronymBuilder = function (str) {
 // // 5 + 1 + 2 + 3 + 4
 // console.log(array1.reduce(reducer, 5));
 // // expected output: 15
+
+module.exports = acronymBuilder

@@ -18,3 +18,5 @@ var arraySearch2D = function (arr) {
 
     return x
 };
+
+module.exports = arraySearch2D
