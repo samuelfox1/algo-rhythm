@@ -14,3 +14,5 @@ var reverseInPlace = function (arr) {
     }
     return arr;
 };
+
+module.exports = reverseInPlace
