@@ -1,4 +1,4 @@
-## longest substring
+## longestSubstring
     WHEN given a string
     RETURN the length of the longest uniqe substring
 

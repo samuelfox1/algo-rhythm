@@ -1,3 +1,3 @@
-# Algo-rhythm
+# algo-rhythm
 
-Collection of algorithm challenges from the UW Full Stack Flex Bootcamp.
+Collection of algorithm challenges from the UW Full Stack Flex Bootcamp & Hacker Rank
