@@ -32,10 +32,10 @@ var isAnagram = function (strA, strB) {
     strB = strB.replace(/[^\w]/g, '').toLowerCase()
 
     let strC = 'ab,cd.sd/gsdfAD'
-    console.log(strC)
+    // console.log(strC)
 
     strC = strC.replace(/[^\w]/g, '').toLowerCase()
-    console.log(strC)
+    // console.log(strC)
 
     // console.log(strA)
     // console.log(strB)

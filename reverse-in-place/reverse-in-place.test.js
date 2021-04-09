@@ -13,7 +13,6 @@ describe("reverseInPlace", function () {
     const result = reverseInPlace(arr);
     expect(result).toBe(arr);
     expect(result).toEqual(reversed);
-    console.log(Array.prototype.reverse.calledOnce)
     expect(Array.prototype.reverse.calledOnce).toBe(true);
   });
 });

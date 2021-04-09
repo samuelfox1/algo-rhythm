@@ -16,7 +16,7 @@ var camelCase = function (str) {
         z[0] = z[0].toUpperCase()
         y += z.join('')
     };
-    console.log(y)
+    // console.log(y)
     return y
 };
 
