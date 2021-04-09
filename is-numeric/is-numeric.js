@@ -7,3 +7,5 @@ var isNumeric = function (str) {
     if (str === '') { return false }
     return !isNaN(str)
 };
+
+module.exports = isNumeric

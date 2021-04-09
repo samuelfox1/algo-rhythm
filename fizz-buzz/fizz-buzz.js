@@ -12,3 +12,5 @@ var fizzBuzz = function (arr) {
         console.log(x)
     });
 };
+
+module.exports = fizzBuzz

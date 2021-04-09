@@ -25,9 +25,6 @@
 
 // };
 
-
-
-
 var isAnagram = function (strA, strB) {
 
 
@@ -53,3 +50,5 @@ function sortString(string) {
 
     return string.split('').sort().join('')
 }
+
+module.exports = isAnagram
