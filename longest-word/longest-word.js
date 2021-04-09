@@ -15,3 +15,5 @@ var longestWord = function (str) {
     });
     return saveWord
 }
+
+module.exports = longestWord

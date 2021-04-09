@@ -28,7 +28,7 @@ var lookAndSay = function (n) {
             counter = 1
         }
     });
-    console.log(newNum)
+    // console.log(newNum)
     return parseInt(newNum)
 
 };
@@ -41,3 +41,5 @@ var lookAndSay = function (n) {
 
 //    when given '  9    11      222     7      3'
 // should return '1-9  2-1     3-2     1-7    1-3'
+
+module.exports = lookAndSay
