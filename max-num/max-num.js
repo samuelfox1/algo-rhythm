@@ -8,3 +8,5 @@ var maxNum = function (arr) {
     }
     return greatestNum
 };
+
+module.exports = maxNum

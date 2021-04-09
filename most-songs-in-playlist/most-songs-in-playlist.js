@@ -23,3 +23,5 @@ var mostSongsInPlaylist = function (arr) {
 
   return totalSongs
 }
+
+module.exports = mostSongsInPlaylist

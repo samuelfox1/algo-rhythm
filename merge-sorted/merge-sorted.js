@@ -38,3 +38,5 @@ var mergeSorted = function (arr1, arr2) {
 
     return merged
 };
+
+module.exports = mergeSorted
