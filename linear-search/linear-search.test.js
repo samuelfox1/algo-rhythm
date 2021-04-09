@@ -1,10 +1,14 @@
-const { describe, it, expect, toBe, beforeEach } = require('@jest/globals')
+const { describe, it, expect, toBe, beforeEach, afterEach } = require('@jest/globals')
 const linearSearch = require('./linear-search')
 const sinon = require('sinon')
 
-// beforeEach(function () {
-//   sinon.spy(Array.prototype, "indexOf");
-// });
+beforeEach(function () {
+  sinon.spy(Array.prototype, "indexOf");
+});
+
+afterEach(function () {
+  Array.prototype.indexOf.restore()
+})
 
 describe("linearSearch", function () {
   it("should not call the 'indexOf' method", function () {
