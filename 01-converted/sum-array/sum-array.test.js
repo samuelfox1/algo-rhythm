@@ -1,4 +1,4 @@
-const { describe, expect, toBe, it } = require('@jest/globals')
+const { describe, expect, it } = require('@jest/globals')
 const sumArray = require('./sum-array')
 
 describe("sumArray", function () {

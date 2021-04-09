@@ -1,5 +1,6 @@
-const { beforeEach, describe, expect, toBe, toEqual, it } = require('@jest/globals')
+const { beforeEach, describe, it, expect } = require('@jest/globals')
 const reverseInPlace = require('./reverse-in-place')
+const sinon = require('sinon')
 
 beforeEach(function () {
   sinon.spy(Array.prototype, "reverse");
@@ -14,6 +15,5 @@ describe("reverseInPlace", function () {
     expect(result).toEqual(reversed);
     console.log(Array.prototype.reverse.calledOnce)
     expect(Array.prototype.reverse.calledOnce).toBe(true);
-    // error with .toBe, also tried .toEqual
   });
 });

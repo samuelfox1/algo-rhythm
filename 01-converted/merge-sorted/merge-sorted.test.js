@@ -1,4 +1,4 @@
-const { describe, it, expect, toEqual } = require('@jest/globals')
+const { describe, it, expect } = require('@jest/globals')
 const mergeSorted = require('./merge-sorted')
 
 describe("mergeSorted", function () {

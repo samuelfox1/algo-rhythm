@@ -1,4 +1,4 @@
-const { describe, it, expect, toBe } = require('@jest/globals')
+const { describe, it, expect } = require('@jest/globals')
 const multiplyInto20 = require('./multiply-into-20')
 
 describe("multiplyInto20", function () {

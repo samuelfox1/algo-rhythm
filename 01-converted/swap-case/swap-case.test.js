@@ -1,4 +1,4 @@
-const { describe, expect, toBe, it } = require('@jest/globals')
+const { describe, expect, it } = require('@jest/globals')
 const swapCase = require('./swap-case')
 
 describe("swapCase", function () {

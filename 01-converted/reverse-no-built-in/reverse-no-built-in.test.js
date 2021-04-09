@@ -1,4 +1,4 @@
-const { describe, expect, toBe, it } = require('@jest/globals')
+const { describe, expect, it } = require('@jest/globals')
 const reverse = require('./reverse-no-built-in')
 
 describe("reverse", function () {

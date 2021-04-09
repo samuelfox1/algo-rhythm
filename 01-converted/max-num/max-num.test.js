@@ -1,4 +1,4 @@
-const { describe, it, expect, toBe } = require('@jest/globals')
+const { describe, it, expect } = require('@jest/globals')
 const maxNum = require('./max-num')
 
 describe("maxNum", function () {

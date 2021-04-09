@@ -1,4 +1,4 @@
-const { describe, it, expect, toEqual, beforeEach, afterEach } = require('@jest/globals')
+const { describe, it, expect, beforeEach, afterEach } = require('@jest/globals')
 const logNums = require('./log-nums')
 
 beforeEach(function () {
