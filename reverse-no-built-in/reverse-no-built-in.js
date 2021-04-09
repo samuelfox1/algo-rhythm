@@ -8,3 +8,5 @@ var reverse = function (str) {
     }
     return reversed
 };
+
+module.exports = reverse

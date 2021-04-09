@@ -20,3 +20,5 @@ var sumArray = (arr) => {
 
     return sumOfArr
 }
+
+module.exports = sumArray
