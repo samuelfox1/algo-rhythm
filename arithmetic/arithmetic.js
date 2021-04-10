@@ -1,16 +1,29 @@
 // Fill in the body of each function with the code required
 
-var add = function (num1, num2) { return num1 + num2 };
+var doMath = function (num1, op, num2) {
+    const validNum1 = validateIsNum(num1)
+    const validNum2 = validateIsNum(num2)
+    const validOp = validateOperator(op)
+    if (!validNum1 || !validNum2) return 'invalid number'
+    if (!validOp) return 'invalid operator'
+    if (op === '+') return num1 + num2
+    if (op === '-') return num1 - num2
+    if (op === '*') return num1 * num2
+    if (op === '**') return num1 ** num2
+    if (op === '/') return num1 / num2
+    if (op === '%') return num1 % num2
+};
 
-var subtract = function (num1, num2) { return num1 - num2 };
-
-var multiply = function (num1, num2) { return num1 * num2 };
-
-var divide = function (num1, num2) { return num1 / num2 };
-
-module.exports = {
-    add: add,
-    subtract: subtract,
-    multiply: multiply,
-    divide: divide
+const validateIsNum = (num) => {
+    if (typeof num != 'number') return false
+    return num
 }
+
+const validateOperator = (op) => {
+    const possibleOperators = ['+', '-', '*', '**', '/', '%']
+    const indexOfOp = possibleOperators.indexOf(op)
+    if (indexOfOp > -1) return op
+    return false
+}
+
+module.exports = doMath
