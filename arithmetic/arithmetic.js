@@ -1,4 +1,3 @@
-// Fill in the body of each function with the code required
 
 var doMath = function (num1, op, num2) {
     const validNum1 = validateIsNum(num1)
