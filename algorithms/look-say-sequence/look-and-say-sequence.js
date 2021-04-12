@@ -1,7 +1,5 @@
 // Write code to create a function that accepts a number (`n`) and returns a new number that satisfies the look-and-say-sequence
 
-// 114333877
-
 
 var lookAndSay = function (n) {
     // add a space to the end of 'n', this will convert n to a string with a space on the end of it. Then split the string up, this will result in an array of all numbers, plus a blank space as the last index.

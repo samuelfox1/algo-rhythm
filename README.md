@@ -3,11 +3,12 @@
 
 >## Description 
 
-* A collection of algorithm challenges and basic test writing to cover basic function and possible edge cases
+* A collection of algorithm challenges and test writing to cover basic function and possible edge cases.
+
 * #### Story
     * AS A: Developer
-    * I WANT: To practice my algorithm challenges and basic test writing with the Jest framework
-    * SO THAT: I can inprove my problem solving and code testing skills
+    * I WANT: To practice my algorithm challenges and test writing with the Jest framework
+    * SO THAT: I can inprove my problem solving and test writing skills
 
 <br>
 
@@ -43,21 +44,19 @@
 
 >## Installation
 
-1. clone repo
-2. open  terminal to root directory
-3. run 'npm i' to install dependencies
+1. clone the repo to your local machine
+2. open terminal to root directory
+3. run 'npm i' to install npm dependencies
 4. run 'npm test' to verify all current tests are passing
-5. 
 
 <br>
 
 >## Usage
 
-1. choose an algorithm to practice and navigate to direcory
-2. run npm test <filename>.test.js to run the testing suite for the specific algorithm.
-3. add any edge cases to testing suites you can think of
-4. 
-5. 
+1. Choose an algorithm to work on and navigate to direcory `./<folder-name>`
+2. Checkout the README.md in the directory to understand the challenge.
+3. Write code in `<algorithm-name>.js` to solve the challenge, write test suites in `<algorithm-name>.test.js` to verify the algorithm passes any edge cases you can think of.
+2. Run npm test `<filename>`.test.js to run the test suite and verify the algorithm and test suite pass as expected.
 
 <br>
 
@@ -71,7 +70,8 @@
 
 >## Testing
 
-* in root folder run npm test to test all algorithm challenges, in a specific algorithm folder, run ''
+* In the project root folder, run `npm test` to test all algorithm challenges
+* In a specific algorithm folder, run `npm <algorithm-name>.test.js` to test the code for the specific algorithm.
 
 <br>
 
@@ -97,7 +97,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <br>
 
-The images found in 'assets/images/logo/' are trademarks of their respective companies and are under their terms and license.
+The images found in './assets/images/logo/' are trademarks of their respective companies and are under their terms and license.
 <br>
 
 2021

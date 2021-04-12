@@ -1,6 +1,6 @@
-let mystring1 = "acabbca"
-let mystring2 = "asdkfjnasdkljvnasldj"
-let mystring3 = "abcdefghijklmnopqrstuvwxyz"
+// Write code to create a function that accepts a string, and returns the length of the longest unique substring
+
+// example mystring1 = "acabbca" will return 3
 
 function longestSubstring(string) {
 
