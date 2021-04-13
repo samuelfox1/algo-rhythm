@@ -1,7 +1,7 @@
 
 const doMath = (num1, op, num2) => {
-    const validNum1 = validateIsNum(num1)
-    const validNum2 = validateIsNum(num2)
+    const validNum1 = validateNum(num1)
+    const validNum2 = validateNum(num2)
     const validOp = validateOperator(op)
     if (!validNum1 || !validNum2) return 'invalid number'
     if (!validOp) return 'invalid operator'
@@ -13,7 +13,7 @@ const doMath = (num1, op, num2) => {
     if (op === '%') return num1 % num2
 };
 
-const validateIsNum = (num) => {
+const validateNum = (num) => {
     if (typeof num != 'number') return false
     return num
 }

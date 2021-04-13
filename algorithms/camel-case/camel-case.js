@@ -1,24 +1,19 @@
 // Write code to create a function that accepts a string and returns the string in camelCase
 
-
-// set str to lowercase then split into an array
-// declare new constiable containing first word
-// loop through the remaining words and set the first letter to uppercase
-// add each word to constiable containing first word
-// return constiable containing all words now in camel case
+// Example: should return 'helloWorld' when given the string 'Hello World'
 
 const camelCase = (str) => {
-    let x = str.toLowerCase().split(' ');
-    let y = x[0];
+    if (typeof str != 'string') return 'invalid datatype'
+    if (str.length === 0) return 'invalid string'
+    let lowercase = str.toLowerCase().split(' '); // set str to lowercase then split into an array
+    let camelCase = lowercase[0]; // initialize with first word
 
-    for (let i = 1; i < x.length; i++) {
-        let xx = x[i]
-        let z = xx.split('')
-        z[0] = z[0].toUpperCase()
-        y += z.join('')
+    for (let i = 1; i < lowercase.length; i++) { // start loop at second word
+        const capitalFirstLetter = lowercase[i].charAt(0).toUpperCase() // capitalize first letter
+        const wordBody = lowercase[i].substring(1) // word minus first letter
+        camelCase += capitalFirstLetter + wordBody // add formatted word to camelCase string
     };
-    // console.log(y)
-    return y
+    return camelCase
 };
 
 module.exports = camelCase
