@@ -1,9 +1,9 @@
 // Write code to create a function that accepts a string and returns an object containing the number of times each character appears in the string
 
-var characterCount = function (str) {
+const characterCount = (str) => {
 
     //declare an object to use
-    var obj = {}
+    const obj = {}
 
     //loop through the string 
     for (let i = 0; i < str.length; i++) {

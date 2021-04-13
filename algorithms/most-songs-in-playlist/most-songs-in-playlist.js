@@ -3,21 +3,18 @@
 // Return the maximum number of songs from the list that can fit in a 60 minute playlist
 
 
-var mostSongsInPlaylist = function (arr) {
+const mostSongsInPlaylist = (arr) => {
 
-  var sortedArr = arr.sort()
-  var totalMins = 0
-  var totalSongs = 0
+  const sortedArr = arr.sort()
+  let totalMins = 0
+  let totalSongs = 0
 
   for (let i = 0; i < sortedArr.length; i++) {
-
     let currentSong = sortedArr[i]
 
     if (totalMins + currentSong <= 60) {
-
       totalMins += currentSong
       totalSongs++
-
     } else { return totalSongs }
   }
 

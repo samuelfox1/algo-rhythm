@@ -2,7 +2,7 @@
 // Return true if there are an equal number of 0s and 1s
 // Else return false
 
-var zeroesAndOnes = function (str) {
+const zeroesAndOnes = (str) => {
     str = str.split('')
     let ones = 0
     let zeros = 0

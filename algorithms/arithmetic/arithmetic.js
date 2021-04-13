@@ -1,5 +1,5 @@
 
-var doMath = function (num1, op, num2) {
+const doMath = (num1, op, num2) => {
     const validNum1 = validateIsNum(num1)
     const validNum2 = validateIsNum(num2)
     const validOp = validateOperator(op)

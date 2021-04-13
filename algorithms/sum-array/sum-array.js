@@ -3,8 +3,8 @@
 
 // // Google-FU - most efficient way using the reduce() method
 
-// var sumArray = function (arr) {
-//     var sum = arr.reduce((a, b) => {
+// const sumArray = function (arr) {
+//     const sum = arr.reduce((a, b) => {
 //         return a + b
 //     }, 0)
 //     return sum
@@ -12,7 +12,7 @@
 
 
 // what the reduce() method actually does
-var sumArray = (arr) => {
+const sumArray = (arr) => {
     // start at 0
     let sumOfArr = 0
 

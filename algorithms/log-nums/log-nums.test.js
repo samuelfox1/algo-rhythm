@@ -5,9 +5,9 @@ beforeEach(function () {
   window._temp = {};
   window._temp.log = console.log;
   window.console.log = (function (...args) {
-    var values = [];
+    const values = [];
 
-    var log = function (args) {
+    const log = function (args) {
       values.push(args);
       window._temp.log(args);
     };
@@ -22,7 +22,7 @@ beforeEach(function () {
 
 describe("logNums", function () {
   it("log numbers 1 through `num`", function () {
-    var num = 10;
+    const num = 10;
 
     logNums(num);
 

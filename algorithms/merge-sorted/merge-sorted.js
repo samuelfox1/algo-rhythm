@@ -1,10 +1,10 @@
 // Write code to merge two sorted arrays into a new sorted array
 
-var mergeSorted = function (arr1, arr2) {
-    var i1 = 0
-    var i2 = 0
-    var merged = []
-    var position = 0
+const mergeSorted = (arr1, arr2) => {
+    let i1 = 0
+    let i2 = 0
+    const merged = []
+    let position = 0
 
     while (position < (arr1.length + arr2.length)) {
         let item1

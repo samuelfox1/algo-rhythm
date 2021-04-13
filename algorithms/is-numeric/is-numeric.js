@@ -3,7 +3,7 @@
 
 // isNan means 'is not a number' !isNan means is not - not a number
 
-var isNumeric = function (str) {
+const isNumeric = (str) => {
     if (str === '') { return false }
     return !isNaN(str)
 };

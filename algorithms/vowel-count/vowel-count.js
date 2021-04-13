@@ -1,6 +1,6 @@
 // Write code to return the the number of vowels in `str`
 
-var vowelCount = function (str) {
+const vowelCount = (str) => {
     if (str === '') { return 0 } // if str is blank, return 0
 
     let arrOfStr = str.toLowerCase().split('') // convert str into array of letters

@@ -1,6 +1,6 @@
 // Write code to create a function that accepts a string (`str`) and returns the longest word in the string
 
-var longestWord = function (str) {
+const longestWord = function (str) {
     let strArr = str.split(' ')
     let longestCount = 0
     let saveWord

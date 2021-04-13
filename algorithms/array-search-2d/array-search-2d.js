@@ -2,21 +2,18 @@
 // Each 2D element contains either the string "X" or "O" (both capitalized)
 // Return the number of times "X" appears in the 2D array
 
-var arraySearch2D = function (arr) {
+const arraySearch2D = (arr) => {
 
-    let x = 0
-
+    let numberOfXs = 0
 
     // for each index of arr, loop through the second array, compare each value to 'X'
-    arr.forEach(y => {
-        for (let i = 0; i < y.length; i++) {
-
-            let z = y[i]
-            if (z === 'X') { x++ }
+    arr.forEach(arr2 => {
+        for (let i = 0; i < arr2.length; i++) {
+            if (arr2[i] === 'X') { numberOfXs++ }
         }
     });
 
-    return x
+    return numberOfXs
 };
 
 module.exports = arraySearch2D

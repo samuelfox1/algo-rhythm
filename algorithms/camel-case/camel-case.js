@@ -2,11 +2,12 @@
 
 
 // set str to lowercase then split into an array
-// declare new variable containing first word
+// declare new constiable containing first word
 // loop through the remaining words and set the first letter to uppercase
-// add each word to variable containing first word
-// return variable containing all words now in camel case
-var camelCase = function (str) {
+// add each word to constiable containing first word
+// return constiable containing all words now in camel case
+
+const camelCase = (str) => {
     let x = str.toLowerCase().split(' ');
     let y = x[0];
 

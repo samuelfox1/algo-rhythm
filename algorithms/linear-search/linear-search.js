@@ -3,9 +3,9 @@
 // else return -1
 // You may not use the `indexOf`, `lastIndexOf` or `includes` methods
 
-var linearSearch = function (arr, target) {
+const linearSearch = (arr, target) => {
     for (let i = 0; i < arr.length; i++) {
-        var x = arr[i]
+        const x = arr[i]
         if (x === target) {
             return i
         }
@@ -16,7 +16,7 @@ var linearSearch = function (arr, target) {
 
 
 
-// var linearSearch = function (arr, target) {
+// const linearSearch = function (arr, target) {
 //     let x = target
 //     let counter = 0
 //     let found = false

@@ -2,7 +2,7 @@
 // Example: will return 3 when given [10, 20, 20, 10, 10, 30, 50, 10, 20]
 
 
-function pairsOfSocks(arr) {
+const pairsOfSocks = (arr) => {
     if (typeof arr === 'string' ||
         typeof arr === 'number' ||
         arr.length < 2) return null // if arr is a string, number, or not long enough
