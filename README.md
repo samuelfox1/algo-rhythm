@@ -1,5 +1,5 @@
 
-# algo-rhythm
+# algorithm-challenges
 
 >## Description 
 
