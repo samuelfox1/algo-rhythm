@@ -1,47 +1,45 @@
 const { describe, it, expect, toBe, afterAll } = require(`@jest/globals`)
 const rimraf = require('rimraf')
-const { existingDirectory, createDirectory, createFile } = require(`./new-challenge`)
+const { createNewAlgo, errMessage, jsFileContent, testFileContent } = require(`./new-challenge`)
+const { existsSync, writeFileSync } = require('fs')
 
-const path = `./test-folder`;
-const testChallenge = `test-challenge`
+const testDir = `./test-folder`;
+const newAlgoName = `test-challenge`;
+const existingAlgoName = 'fizz-buzz';
 
-describe(`existingDirectory`, () => {
-    const exists = `fizz-buzz`;
-    const doesNotExist = `fizzy-buzzy`;
-
-    it(`should return true if directory '${exists}' exists in ${path}`, () => {
-        expect(existingDirectory(path, exists)).toBe(true);
-    });
-    it(`should return false if directory '${doesNotExist}' does not exist in ${path}`, () => {
-        expect(existingDirectory(path, doesNotExist)).toBe(false);
+describe('errorMessage', () => {
+    it('should return a custom error message', () => {
+        expect(errMessage(existingAlgoName)).toBe(`${existingAlgoName} alread in use`);
     });
 });
 
-describe(`createDirectory`, () => {
-    it(`should create a new directory`, () => {
-        createDirectory(path, testChallenge)
-        expect(existingDirectory(path, testChallenge)).toBe(true)
+describe(`createNewAlgo`, () => {
+    it(`shoud return custom error message if new algo name exists`, () => {
+        expect(createNewAlgo(testDir, existingAlgoName)).toBe(errMessage(existingAlgoName));
+    });
+
+    it(`should create a new algo folder `, () => {
+        createNewAlgo(testDir, newAlgoName)
+        expect(existsSync(`${testDir}/${newAlgoName}/${newAlgoName}.js`)).toBe(true);
+    });
+
+    it(`should create a new .js file in the new algo folder`, () => {
+        expect(existsSync(`${testDir}/${newAlgoName}/${newAlgoName}.js`)).toBe(true);
+    });
+
+    it(`read the correct contents of the new .js file`, () => {
+        const filePath = `../${testDir}/${newAlgoName}/${newAlgoName}.js`;
+        expect(require(filePath)).toBe(jsFileContent(newAlgoName));
+    });
+
+    it(`should create a new .test.js file in the new algo folder`, () => {
+        expect(existsSync(`${testDir}/${newAlgoName}/${newAlgoName}.test.js`)).toBe(true);
+    });
+
+    it(`read the correct contents of the new .test.js file`, () => {
+        const filePath = `../${testDir}/${newAlgoName}/${newAlgoName}.test.js`;
+        expect(require(filePath)).toBe(testFileContent(newAlgoName));
     });
 });
 
-describe(`createFile`, () => {
-    const newFilePath = `${path}/${testChallenge}/${testChallenge}.js`
-    const newFileContents = `hello from ${testChallenge}.js`
-
-    it(`should create a new file in the directory ${newFilePath}`, () => {
-        createFile(newFilePath, `module.exports = '${newFileContents}'`)
-        expect(existingDirectory(`${path}/${testChallenge}`, `/${testChallenge}.js`)).toBe(true)
-    });
-    it(`read the correct contents of the file created in ${newFilePath}`, () => {
-        expect(require(`../${newFilePath}`)).toBe(newFileContents)
-    })
-});
-
-//
-// describe(``, () => {
-//     it(``, () => {
-//         expect().toBe()
-//     });
-// });
-
-afterAll(() => rimraf(`${path}/${testChallenge}`, () => { }));
+afterAll(() => rimraf(`${testDir}/${newAlgoName}`, () => { }));
