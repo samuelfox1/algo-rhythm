@@ -2,6 +2,7 @@ const {
     existsSync,
     mkdirSync,
     writeFileSync } = require('fs')
+
 module.exports = {
     existingDirectory: (path, name) => {
         return existsSync(`${path}/${name}`)
@@ -11,6 +12,5 @@ module.exports = {
     },
     createFile: (pathname, contents) => {
         writeFileSync(pathname, contents)
-
     },
 }
