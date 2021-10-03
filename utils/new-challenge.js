@@ -9,5 +9,8 @@ module.exports = {
     createDirectory: (path, name) => {
         mkdirSync(`${path}/${name}`)
     },
-    createFile: (name, contents) => { },
+    createFile: (pathname, contents) => {
+        writeFileSync(pathname, contents)
+
+    },
 }

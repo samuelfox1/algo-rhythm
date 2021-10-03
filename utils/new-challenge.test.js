@@ -1,7 +1,6 @@
 const { describe, it, expect, toBe, afterAll } = require(`@jest/globals`)
-const { existingDirectory, createDirectory } = require(`./new-challenge`)
-// const { rmdirSync } = require('fs')
 const rimraf = require('rimraf')
+const { existingDirectory, createDirectory, createFile } = require(`./new-challenge`)
 
 const path = `./test-folder`;
 const testChallenge = `test-challenge`
@@ -25,10 +24,24 @@ describe(`createDirectory`, () => {
     });
 });
 
+describe(`createFile`, () => {
+    const newFilePath = `${path}/${testChallenge}/${testChallenge}.js`
+    const newFileContents = `hello from ${testChallenge}.js`
+
+    it(`should create a new file in the directory ${newFilePath}`, () => {
+        createFile(newFilePath, `module.exports = '${newFileContents}'`)
+        expect(existingDirectory(`${path}/${testChallenge}`, `/${testChallenge}.js`)).toBe(true)
+    });
+    it(`read the correct contents of the file created in ${newFilePath}`, () => {
+        expect(require(`../${newFilePath}`)).toBe(newFileContents)
+    })
+});
+
+//
 // describe(``, () => {
 //     it(``, () => {
+//         expect().toBe()
 //     });
 // });
 
-// delete the test  challenge created with the createDirectory tests
 afterAll(() => rimraf(`${path}/${testChallenge}`, () => { }));
