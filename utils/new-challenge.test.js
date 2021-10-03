@@ -1,10 +1,11 @@
 const { describe, it, expect, toBe, afterAll } = require(`@jest/globals`)
 const rimraf = require('rimraf')
 const { createNewAlgo, errMessage, jsFileContent, testFileContent } = require(`./new-challenge`)
-const { existsSync, writeFileSync } = require('fs')
+const { existsSync, readFileSync } = require('fs')
 
 const testDir = `./test-folder`;
 const newAlgoName = `test-challenge`;
+const newAlgoDescription = 'content of test file'
 const existingAlgoName = 'fizz-buzz';
 
 describe('errorMessage', () => {
@@ -19,7 +20,7 @@ describe(`createNewAlgo`, () => {
     });
 
     it(`should create a new algo folder `, () => {
-        createNewAlgo(testDir, newAlgoName)
+        createNewAlgo(testDir, newAlgoName, newAlgoDescription)
         expect(existsSync(`${testDir}/${newAlgoName}/${newAlgoName}.js`)).toBe(true);
     });
 
@@ -28,8 +29,8 @@ describe(`createNewAlgo`, () => {
     });
 
     it(`read the correct contents of the new .js file`, () => {
-        const filePath = `../${testDir}/${newAlgoName}/${newAlgoName}.js`;
-        expect(require(filePath)).toBe(jsFileContent(newAlgoName));
+        const filePath = `${testDir}/${newAlgoName}/${newAlgoName}.js`;
+        expect(readFileSync(filePath, 'utf8')).toBe(jsFileContent(newAlgoName, newAlgoDescription));
     });
 
     it(`should create a new .test.js file in the new algo folder`, () => {
@@ -37,8 +38,8 @@ describe(`createNewAlgo`, () => {
     });
 
     it(`read the correct contents of the new .test.js file`, () => {
-        const filePath = `../${testDir}/${newAlgoName}/${newAlgoName}.test.js`;
-        expect(require(filePath)).toBe(testFileContent(newAlgoName));
+        const filePath = `${testDir}/${newAlgoName}/${newAlgoName}.test.js`;
+        expect(readFileSync(filePath, 'utf8')).toBe(testFileContent(newAlgoName));
     });
 });
 
