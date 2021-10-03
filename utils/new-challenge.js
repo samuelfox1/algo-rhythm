@@ -5,13 +5,21 @@ const {
 
 const errMessage = (name) => `${name} alread in use`;
 
-const jsFileContent = (name, description) => `
-//${description}
+const jsFileContent = (name, description) => {
+    const formatName = name.split('-').map((word, i) => {
+        if (i > 0) {
+            let newWord = word[0].toUpperCase()
+            newWord += word.substring(1)
+            return newWord
+        }
+        return word
+    })
+    return `//${description}
 
-const ${name}=()=>{}
-`;
+const ${formatName.join('')}=()=>{}`
+};
 
-const testFileContent = (contents) => `hello from ${contents}.test.js`;
+const testFileContent = (contents) => `//hello from ${contents}.test.js`;
 
 const createNewAlgo = function (path, name, description) {
     const dirPath = `${path}/${name}`;
