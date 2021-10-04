@@ -1,25 +1,25 @@
 const {
     existsSync,
     mkdirSync,
+    readdirSync,
     writeFileSync } = require('fs');
+
+const getDirectories = source => {
+    return readdirSync(source, { withFileTypes: true })
+        .filter(dirent => dirent.isDirectory())
+        .map(dirent => dirent.name)
+}
 
 const errMessage = (name) => `${name} alread in use`;
 
 const jsFileContent = (name, description) => {
-    const formatName = name.split('-').map((word, i) => {
-        if (i > 0) {
-            let newWord = word[0].toUpperCase()
-            newWord += word.substring(1)
-            return newWord
-        }
-        return word
-    })
+    const formatName = name.split('-').map((word, i) => i > 0 ? `${word[0].toUpperCase()}${word.substring(1)}` : word)
     return `//${description}
 
 const ${formatName.join('')}=()=>{}`
 };
 
-const testFileContent = (contents) => `//hello from ${contents}.test.js`;
+const testFileContent = (contents) => `const { describe, it, expect, toBe, beforeAll, afterAll } = require('@jest/globals')`;
 
 const createNewAlgo = function (path, name, description) {
     const dirPath = `${path}/${name}`;
@@ -36,5 +36,6 @@ module.exports = {
     errMessage,
     createNewAlgo,
     jsFileContent,
-    testFileContent
+    testFileContent,
+    getDirectories
 };

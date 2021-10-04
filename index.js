@@ -1,4 +1,5 @@
 const { prompt } = require('inquirer')
+const { createNewAlgo, getDirectories } = require('./utils/new-challenge')
 
 const start = async () => {
     console.clear()
@@ -13,12 +14,12 @@ const start = async () => {
     const { selection } = await prompt(request)
     switch (selection) {
         case 'add new algorithm': {
-            addNewAlgorithm()
+            addNewAlgo()
             break
         }
         case 'quit': {
-            console.log('goodbye')
-            await new Promise((resolve) => setTimeout(() => resolve(), 1000))
+            console.log('\ngoodbye\n')
+            await new Promise((resolve) => setTimeout(() => resolve(), 2000))
             console.clear()
             break
         }
@@ -28,27 +29,26 @@ const start = async () => {
 
 }
 
-const addNewAlgorithm = async () => {
 
-    const getAlgorithDetail = async (key, message) => {
-        const answer = await prompt([
-            {
-                type: 'input',
-                message: message,
-                name: key,
-                validate: (val) => val ? true : false
-            }])
-        return answer[key]
+const addNewAlgo = async () => {
+
+    const getAlgoDetail = async (key, message, cb) => {
+        const answer = await prompt([{
+            type: 'input',
+            message: message,
+            name: key,
+            validate: (val) => cb(val)
+        }]);
+        return answer[key];
     }
 
-    const getAlgorithmDescription = (algorithmName) => {
+    const defaultValidate = (val) => val ? true : false
+    const formattedName = (algoName) => algoName.replace(' ', '-')
+    const validateName = (val) => getDirectories('./algorithms').indexOf(formattedName(val)) === -1
+    const algoName = await getAlgoDetail('name', 'What is the name? ()', validateName)
+    const algoDescription = await getAlgoDetail('description', `What will ${formattedName(algoName)} do?`, defaultValidate);
 
-    }
+    createNewAlgo(`./algorithms`, formattedName(algoName), algoDescription)
+};
 
-    const algorithmName = await getAlgorithDetail('name', 'What is the name?')
-    const algorithmDescription = await getAlgorithDetail('description', `What will ${algorithmName} do?`)
-
-
-}
-
-start()
+start();
