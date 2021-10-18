@@ -5,14 +5,15 @@
 const camelCase = (str) => {
     if (typeof str != 'string') return 'invalid datatype'
     if (str.length === 0) return 'invalid string'
+    let sanitized = str
+    const charsToReplace = ['-', '_']
 
-    return str.toLowerCase()
-        .split('-')
-        .join(' ')
+    charsToReplace.map(char => sanitized = sanitized.split(char).join(' '))
+
+    return sanitized.toLowerCase()
         .split(' ')
         .map((word, i) => i > 0 ? `${word[0].toUpperCase()}${word.substring(1)}` : word)
         .join('')
-
 };
 
 module.exports = camelCase
