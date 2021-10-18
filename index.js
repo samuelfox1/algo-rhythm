@@ -45,8 +45,8 @@ const addNewAlgo = async () => {
     const defaultValidate = (val) => val ? true : false
     const formattedName = (algoName) => algoName.replace(' ', '-')
     const validateName = (val) => getDirectories('./algorithms').indexOf(formattedName(val)) === -1
-    const algoName = await getAlgoDetail('name', 'What is the name? ()', validateName)
-    const algoDescription = await getAlgoDetail('description', `What will ${formattedName(algoName)} do?`, defaultValidate);
+    const algoName = await getAlgoDetail('name', 'What is the name? ** use-snake-case or camelCase **', validateName)
+    const algoDescription = await getAlgoDetail('description', `Complete this sentance:  ${algoName} will`, defaultValidate);
 
     createNewAlgo(`./algorithms`, formattedName(algoName), algoDescription)
 };
