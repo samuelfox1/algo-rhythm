@@ -1,5 +1,4 @@
 const { prompt } = require('inquirer')
-const { readdirSync } = require('fs')
 const camelCase = require('./custom-methods/camel-case/camel-case')
 const { createNewAlgo, getDirectories } = require('./utils/new-challenge')
 
@@ -64,18 +63,4 @@ const addNewCustomMethod = () => {
 }
 
 
-// start();
-
-
-const arr = readdirSync('./', { withFileTypes: true })
-    .filter(({ name }) => name.indexOf('.') === -1 && name.indexOf('-') !== -1)
-    .map(({ name }) => {
-        return {
-            dirName: name,
-            subFolders: readdirSync(`./${name}`)
-        }
-    })
-
-
-console.log(arr)
-
+start();
