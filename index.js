@@ -1,9 +1,11 @@
 const { prompt } = require('inquirer')
+const { readdirSync } = require('fs')
+const camelCase = require('./custom-methods/camel-case/camel-case')
 const { createNewAlgo, getDirectories } = require('./utils/new-challenge')
 
 const start = async () => {
     console.clear()
-    const options = ['add new algorithm', 'quit']
+    const options = ['add new algorithm', 'add new custom method', 'quit']
     const request = [{
         type: "list",
         message: "what would you like to do?",
@@ -17,6 +19,12 @@ const start = async () => {
             addNewAlgo()
             break
         }
+
+        case 'add new custom method': {
+            addNewCustomMethod()
+            break
+        }
+
         case 'quit': {
             console.log('\ngoodbye\n')
             await new Promise((resolve) => setTimeout(() => resolve(), 2000))
@@ -44,11 +52,30 @@ const addNewAlgo = async () => {
 
     const defaultValidate = (val) => val ? true : false
     const formattedName = (algoName) => algoName.replace(' ', '-')
-    const validateName = (val) => getDirectories('./algorithms').indexOf(formattedName(val)) === -1
+    const validateName = (val) => getDirectories('./algorithm-challenges').indexOf(formattedName(val)) === -1
     const algoName = await getAlgoDetail('name', 'What is the name? ** use-snake-case or camelCase **', validateName)
-    const algoDescription = await getAlgoDetail('description', `Complete this sentance:  ${algoName} will`, defaultValidate);
+    const algoDescription = await getAlgoDetail('description', `Complete this sentance:  ${camelCase(algoName)} will`, defaultValidate);
 
-    createNewAlgo(`./algorithms`, formattedName(algoName), algoDescription)
+    createNewAlgo(`./algorithm-challenges`, formattedName(algoName), algoDescription)
 };
 
-start();
+const addNewCustomMethod = () => {
+
+}
+
+
+// start();
+
+
+const arr = readdirSync('./', { withFileTypes: true })
+    .filter(({ name }) => name.indexOf('.') === -1 && name.indexOf('-') !== -1)
+    .map(({ name }) => {
+        return {
+            dirName: name,
+            subFolders: readdirSync(`./${name}`)
+        }
+    })
+
+
+console.log(arr)
+

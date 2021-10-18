@@ -3,6 +3,7 @@ const {
     mkdirSync,
     readdirSync,
     writeFileSync } = require('fs');
+const camelCase = require('../custom-methods/camel-case/camel-case');
 
 const getDirectories = source => {
     return readdirSync(source, { withFileTypes: true })
@@ -13,13 +14,22 @@ const getDirectories = source => {
 const errMessage = (name) => `${name} alread in use`;
 
 const jsFileContent = (name, description) => {
-    const formatName = name.split('-').map((word, i) => i > 0 ? `${word[0].toUpperCase()}${word.substring(1)}` : word)
     return `//${description}
 
-const ${formatName.join('')}=()=>{}`
+const ${camelCase(name)}=()=>{}
+
+module.exports = ${camelCase(name)}`
 };
 
-const testFileContent = (contents) => `const { describe, it, expect, toBe, beforeAll, afterAll } = require('@jest/globals')`;
+const testFileContent = (name, description) => `const { describe, it, expect, toBe, beforeAll, afterAll } = require('@jest/globals')
+const ${camelCase(name)} = require('./${name}')
+
+describe('${name}', () => {
+    it('should ${description}', () => {
+
+    })
+})
+`;
 
 const createNewAlgo = function (path, name, description) {
     const dirPath = `${path}/${name}`;
@@ -29,7 +39,7 @@ const createNewAlgo = function (path, name, description) {
     if (existsSync(dirPath)) return `${errMessage(name)}`;
     mkdirSync(dirPath);
     writeFileSync(jsFilePath, `${jsFileContent(name, description)}`);
-    writeFileSync(testFilePath, `${testFileContent(name)}`);
+    writeFileSync(testFilePath, `${testFileContent(name, description)}`);
 };
 
 module.exports = {
