@@ -10,7 +10,7 @@ const existingAlgoName = 'fizz-buzz';
 
 describe('errorMessage', () => {
     it('should return a custom error message', () => {
-        expect(errMessage(existingAlgoName)).toBe(`${existingAlgoName} alread in use`);
+        expect(errMessage(existingAlgoName)).toBe(`${existingAlgoName} already in use`);
     });
 });
 
