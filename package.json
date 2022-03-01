@@ -23,7 +23,7 @@
     "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "inquirer": "^8.1.5",
+    "inquirer": "^8.2.0",
     "sinon": "^10.0.1"
   }
 }

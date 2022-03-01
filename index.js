@@ -54,7 +54,7 @@ const addNewAlgo = async () => {
     const formattedName = (algoName) => algoName.replace(' ', '-')
     const validateName = (val) => getDirectories('./algorithm-challenges').indexOf(formattedName(val)) === -1
     const algoName = await getAlgoDetail('name', 'What is the name? ** use-snake-case or camelCase **', validateName)
-    const algoDescription = await getAlgoDetail('description', `Complete this sentance:  ${camelCase(algoName)} will`, defaultValidate);
+    const algoDescription = await getAlgoDetail('description', `Complete this sentence:  ${camelCase(algoName)} will`, defaultValidate);
 
     createNewAlgo(`./algorithm-challenges`, formattedName(algoName), algoDescription)
 };
